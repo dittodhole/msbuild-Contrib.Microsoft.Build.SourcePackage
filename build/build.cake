@@ -1,4 +1,4 @@
-var confiurations = new[]
+var configurations = new[]
 {
   "Release",
   "SourcePackage"
@@ -13,7 +13,7 @@ Task("Build")
 {
   Information($"Building {MakeAbsolute(solutionFile)}");
 
-  foreach (var configuration in cofigurations)
+  foreach (var configuration in configurations)
   {
     MSBuild(solutionFile,
             settings => settings.SetConfiguration(configuration)
