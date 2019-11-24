@@ -1,11 +1,7 @@
-var configurations = new[]
-{
-  "Release",
-  "SourcePackage"
-};
 var artifactsDirectory = Directory("../artifacts");
 var sourceDirectory = Directory("../src");
 var solutionFile = sourceDirectory + File("Contrib.Microsoft.Build.SourcePackage.sln");
+var projectfile = sourceDirectory + Directory("Contrib.Microsoft.Build.SourcePackage") + File("Contrib.Microsoft.Build.SourcePackage.csproj");
 
 Task("Build")
   .IsDependentOn("Clean")
@@ -13,13 +9,16 @@ Task("Build")
 {
   Information($"Building {MakeAbsolute(solutionFile)}");
 
-  foreach (var configuration in configurations)
-  {
-    MSBuild(solutionFile,
-            settings => settings.SetConfiguration(configuration)
-                                .WithRestore()
-                                .WithProperty("PackageOutputPath", MakeAbsolute(artifactsDirectory).FullPath));
-  }
+  MSBuild(solutionFile,
+          settings => settings.SetConfiguration("Release")
+                              .WithRestore()
+                              .WithProperty("PackageOutputPath", MakeAbsolute(artifactsDirectory).FullPath));
+
+  MSBuild(projectfile,
+          settings => settings.SetConfiguration("SourcePackage")
+                              .WithRestore()
+                              .WithProperty("PackageOutputPath", MakeAbsolute(artifactsDirectory).FullPath));
+
 });
 
 Task("Clean")
