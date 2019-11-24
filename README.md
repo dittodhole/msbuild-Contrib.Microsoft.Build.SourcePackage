@@ -30,6 +30,10 @@ PM> Install-Package -Id Contrib.Microsoft.Build.SourcePackage
 
 To build the project as a source package, simply use the `SourcePackage` [Configuration](https://docs.microsoft.com/en-us/visualstudio/ide/understanding-build-configurations?view=vs-2019) available in the build options.
 
+You can override following properties with `Directory.Build.props`:
+
+- `ContribMicrosoftBuildSourcePackage_AdaptPackagId` (default: `True`) 
+
 ## Developing & Building
 
 ```cmd
@@ -42,6 +46,7 @@ msbuild-Contrib.Microsoft.Build.SourcePackage/build> build.bat
 This will create the following artifacts:
 
 - `artifacts/Contrib.Microsoft.Build.SourcePackage.{version}.nupkg`
+- `artifacts/Contrib.Microsoft.Build.SourcePackage.Source.{version}.nupkg`
 
 ## License
 
