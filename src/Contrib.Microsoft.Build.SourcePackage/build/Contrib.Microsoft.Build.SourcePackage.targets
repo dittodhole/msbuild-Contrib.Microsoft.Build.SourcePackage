@@ -6,11 +6,18 @@
       <PackageId Condition="'$(ContribMicrosoftBuildSourcePackage_AdaptPackagId)' == 'True'">$(PackageId).Source</PackageId>
       <developmentDependency>true</developmentDependency>
       <IncludeBuildOutput>false</IncludeBuildOutput>
+      <IncludeContentInPack>true</IncludeContentInPack>
     </PropertyGroup>
     <ItemGroup>
       <PackageReference Update="@(PackageReference)">
         <PrivateAssets>all</PrivateAssets>
       </PackageReference>
+    </ItemGroup>
+    <ItemGroup>
+      <Content Update="@(Content)">
+        <Pack>True</Pack>
+        <PackagePath>$(ContentTargetFolders)</PackagePath>
+      </Content>
     </ItemGroup>
     <ItemGroup>
       <Compile Update="@(Compile)">
@@ -21,7 +28,74 @@
     <ItemGroup>
       <EmbeddedResource Update="@(EmbeddedResource)">
         <Pack>True</Pack>
+        <PackagePath>$(ContentTargetFolders)</PackagePath>
       </EmbeddedResource>
+    </ItemGroup>
+    <ItemGroup>
+      <ApplicationDefinition Update="@(ApplicationDefinition)">
+        <Pack>True</Pack>
+        <PackagePath>$(ContentTargetFolders)</PackagePath>
+      </ApplicationDefinition>
+    </ItemGroup>
+    <ItemGroup>
+      <Page Update="@(Page)">
+        <Pack>True</Pack>
+        <PackagePath>$(ContentTargetFolders)</PackagePath>
+      </Page>
+    </ItemGroup>
+    <ItemGroup>
+      <Resource Update="@(Resource)">
+        <Pack>True</Pack>
+        <PackagePath>$(ContentTargetFolders)</PackagePath>
+      </Resource>
+    </ItemGroup>
+    <ItemGroup>
+      <SplashScreen Update="@(SplashScreen)">
+        <Pack>True</Pack>
+        <PackagePath>$(ContentTargetFolders)</PackagePath>
+      </SplashScreen>
+    </ItemGroup>
+    <ItemGroup>
+      <DesignData Update="@(DesignData)">
+        <Pack>True</Pack>
+        <PackagePath>$(ContentTargetFolders)</PackagePath>
+      </DesignData>
+    </ItemGroup>
+    <ItemGroup>
+      <DesignDataWithDesignTimeCreatableTypes Update="@(DesignDataWithDesignTimeCreatableTypes)">
+        <Pack>True</Pack>
+        <PackagePath>$(ContentTargetFolders)</PackagePath>
+      </DesignDataWithDesignTimeCreatableTypes>
+    </ItemGroup>
+    <ItemGroup>
+      <CodeAnalysisDictionary Update="@(CodeAnalysisDictionary)">
+        <Pack>True</Pack>
+        <PackagePath>$(ContentTargetFolders)</PackagePath>
+      </CodeAnalysisDictionary>
+    </ItemGroup>
+    <ItemGroup>
+      <AndroidAsset Update="@(AndroidAsset)">
+        <Pack>True</Pack>
+        <PackagePath>$(ContentTargetFolders)</PackagePath>
+      </AndroidAsset>
+    </ItemGroup>
+    <ItemGroup>
+      <AndroidResource Update="@(AndroidResource)">
+        <Pack>True</Pack>
+        <PackagePath>$(ContentTargetFolders)</PackagePath>
+      </AndroidResource>
+    </ItemGroup>
+    <ItemGroup>
+      <BundleResource Update="@(BundleResource)">
+        <Pack>True</Pack>
+        <PackagePath>$(ContentTargetFolders)</PackagePath>
+      </BundleResource>
+    </ItemGroup>
+    <ItemGroup>
+      <None Update="@(None)">
+        <Pack>True</Pack>
+        <PackagePath>$(ContentTargetFolders)</PackagePath>
+      </None>
     </ItemGroup>
   </Target>
 </Project>
