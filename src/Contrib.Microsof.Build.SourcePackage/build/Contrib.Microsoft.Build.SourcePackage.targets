@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Target Name="Add" BeforeTargets="PrepareForBuild" Condition="'$(Configuration)' == 'SourcePackage'">
+    <PropertyGroup>
+      <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+      <PackageId Condition="'$(ContribMicrosoftBuildSourcePackage_AdaptPackagId)' == 'True'">$(PackageId).Source</PackageId>
+      <developmentDependency>true</developmentDependency>
+      <IncludeBuildOutput>false</IncludeBuildOutput>
+    </PropertyGroup>
+    <ItemGroup>
+      <PackageReference Update="@(PackageReference)">
+        <PrivateAssets>all</PrivateAssets>
+      </PackageReference>
+    </ItemGroup>
+    <ItemGroup>
+      <Compile Update="@(Compile)">
+        <Pack>True</Pack>
+        <PackagePath>$(ContentTargetFolders)</PackagePath>
+      </Compile>
+    </ItemGroup>
+    <ItemGroup>
+      <EmbeddedResource Update="@(EmbeddedResource)">
+        <Pack>True</Pack>
+      </EmbeddedResource>
+    </ItemGroup>
+  </Target>
+</Project>

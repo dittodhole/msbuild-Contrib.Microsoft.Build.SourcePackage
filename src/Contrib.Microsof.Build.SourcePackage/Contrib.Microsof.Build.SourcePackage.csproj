@@ -1,0 +1,71 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="build\Contrib.Microsoft.Build.SourcePackage.props" />
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
+    <EnableDefaultItems>false</EnableDefaultItems>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>Contrib.Microsoft.Build.SourcePackage</PackageId>
+    <Authors>dittodhole</Authors>
+    <developmentDependency>true</developmentDependency>
+    <PackageDescription />
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <PackageProjectUrl>https://github.com/dittodhole/msbuild-Contrib.Microsoft.Build.SourcePackage</PackageProjectUrl>
+    <PackageIcon>noun_Source Code_996120.png</PackageIcon>
+    <PackageTags />
+    <PackageType>Dependency</PackageType>
+    <RepositoryUrl>https://github.com/dittodhole/dotnet-Source.JetBrains.Annotations.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <BuildOutputTargetFolder>tasks</BuildOutputTargetFolder>
+  </PropertyGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+    <PackageReference Include="NETStandard.Library" Version="2.0.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="build\Contrib.Microsoft.Build.SourcePackage.props">
+      <Pack>true</Pack>
+      <PackagePath>build</PackagePath>
+    </None>
+    <None Include="build\Contrib.Microsoft.Build.SourcePackage.targets">
+      <Pack>true</Pack>
+      <PackagePath>build</PackagePath>
+    </None>
+    <None Include="buildMultiTargeting\Contrib.Microsoft.Build.SourcePackage.props">
+      <Pack>true</Pack>
+      <PackagePath>buildMultiTargeting</PackagePath>
+    </None>
+    <None Include="buildMultiTargeting\Contrib.Microsoft.Build.SourcePackage.targets">
+      <Pack>true</Pack>
+      <PackagePath>buildMultiTargeting</PackagePath>
+    </None>
+    <None Include="..\..\LICENSE.txt">
+      <Pack>true</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\..\assets\noun_Source Code_996120.png">
+      <Pack>true</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="GitVersionTask" Version="5.1.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+  <Target Name="UpdateRepositoryBranch" BeforeTargets="GenerateNuspec">
+    <PropertyGroup>
+      <RepositoryBranch>$(GitVersion_BranchName)</RepositoryBranch>
+    </PropertyGroup>
+  </Target>
+  <Target Name="UpdateRepositoryCommit" BeforeTargets="GenerateNuspec">
+    <PropertyGroup>
+      <RepositoryCommit>$(GitVersion_Sha)</RepositoryCommit>
+    </PropertyGroup>
+  </Target>
+  <Import Project="build\Contrib.Microsoft.Build.SourcePackage.targets" />
+</Project>
