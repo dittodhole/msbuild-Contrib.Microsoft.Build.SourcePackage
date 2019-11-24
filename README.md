@@ -1,4 +1,4 @@
-![](assets/noun_Source Code_996120.png)
+![](assets/noun_Source%20Code_996120.png)
 
 # msbuild-Contrib.Microsoft.Build.SourcePackage
 
