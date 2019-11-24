@@ -11,11 +11,13 @@ Task("Build")
 
   MSBuild(solutionFile,
           settings => settings.SetConfiguration("Release")
+                              .SetVerbosity(Verbosity.Minimal)
                               .WithRestore()
                               .WithProperty("PackageOutputPath", MakeAbsolute(artifactsDirectory).FullPath));
 
   MSBuild(projectfile,
           settings => settings.SetConfiguration("SourcePackage")
+                              .SetVerbosity(Verbosity.Minimal)
                               .WithRestore()
                               .WithProperty("PackageOutputPath", MakeAbsolute(artifactsDirectory).FullPath));
 
