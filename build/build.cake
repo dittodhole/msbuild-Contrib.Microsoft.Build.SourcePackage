@@ -1,5 +1,8 @@
-var configuration = "Release";
-var foo = "SourcePackage";
+var confiurations = new[]
+{
+  "Release",
+  "SourcePackage"
+};
 var artifactsDirectory = Directory("../artifacts");
 var sourceDirectory = Directory("../src");
 var solutionFile = sourceDirectory + File("Contrib.Microsoft.Build.SourcePackage.sln");
@@ -10,11 +13,13 @@ Task("Build")
 {
   Information($"Building {MakeAbsolute(solutionFile)}");
 
-  MSBuild(solutionFile,
-          settings => settings.SetConfiguration(configuration)
-                              .SetFoo(foo)
-                              .WithRestore()
-                              .WithProperty("PackageOutputPath", MakeAbsolute(artifactsDirectory).FullPath));
+  foreach (var configuration in cofigurations)
+  {
+    MSBuild(solutionFile,
+            settings => settings.SetConfiguration(configuration)
+                                .WithRestore()
+                                .WithProperty("PackageOutputPath", MakeAbsolute(artifactsDirectory).FullPath));
+  }
 });
 
 Task("Clean")
