@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Target Name="Add" BeforeTargets="PrepareForBuild" Condition="'$(Configuration)' == 'SourcePackage'">
+    <Message Text="MSBuildBinPath:             $(MSBuildBinPath)" />
+    <Message Text="MSBuildExtensionsPath:      $(MSBuildExtensionsPath)" />
+    <Message Text="MSBuildExtensionsPath32:    $(MSBuildExtensionsPath32)" />
+    <Message Text="MSBuildExtensionsPath64:    $(MSBuildExtensionsPath64)" />
+    <Message Text="MSBuildRuntimeType:         $(MSBuildRuntimeType)" />
+    <Message Text="MSBuildStartupDirectory:    $(MSBuildStartupDirectory)" />
+    <Message Text="MSBuildToolsPath:           $(MSBuildToolsPath)"/>
+    <Message Text="MSBuildToolsVersion:        $(MSBuildToolsVersion)" />
+    <Message Text="MSBuildVersion:             $(MSBuildVersion)" />
+    <Message Text="PackageLicenseFile:         $(PackageLicenseFile)" />
+    <Message Text="PackageIcon:                $(PackageIcon)" />
+    <Message Text="_AdaptPackagId:             $(ContribMicrosoftBuildSourcePackage_AdaptPackagId)" />
     <PropertyGroup>
       <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
       <PackageId Condition="'$(ContribMicrosoftBuildSourcePackage_AdaptPackagId)' == 'True'">$(PackageId).Source</PackageId>
@@ -16,85 +28,85 @@
     <ItemGroup>
       <Content Update="@(Content)">
         <Pack>True</Pack>
-        <PackagePath>$(ContentTargetFolders)</PackagePath>
+        <PackagePath>conent\%(RelativeDir);contentFiles\any\any\%(RelativeDir)</PackagePath>
       </Content>
     </ItemGroup>
     <ItemGroup>
       <Compile Update="@(Compile)">
         <Pack>True</Pack>
-        <PackagePath>$(ContentTargetFolders)</PackagePath>
+        <PackagePath>conent\%(RelativeDir);contentFiles\any\any\%(RelativeDir)</PackagePath>
       </Compile>
     </ItemGroup>
     <ItemGroup>
       <EmbeddedResource Update="@(EmbeddedResource)">
         <Pack>True</Pack>
-        <PackagePath>$(ContentTargetFolders)</PackagePath>
+        <PackagePath>conent\%(RelativeDir);contentFiles\any\any\%(RelativeDir)</PackagePath>
       </EmbeddedResource>
     </ItemGroup>
     <ItemGroup>
       <ApplicationDefinition Update="@(ApplicationDefinition)">
         <Pack>True</Pack>
-        <PackagePath>$(ContentTargetFolders)</PackagePath>
+        <PackagePath>conent\%(RelativeDir);contentFiles\any\any\%(RelativeDir)</PackagePath>
       </ApplicationDefinition>
     </ItemGroup>
     <ItemGroup>
       <Page Update="@(Page)">
         <Pack>True</Pack>
-        <PackagePath>$(ContentTargetFolders)</PackagePath>
+        <PackagePath>conent\%(RelativeDir);contentFiles\any\any\%(RelativeDir)</PackagePath>
       </Page>
     </ItemGroup>
     <ItemGroup>
       <Resource Update="@(Resource)">
         <Pack>True</Pack>
-        <PackagePath>$(ContentTargetFolders)</PackagePath>
+        <PackagePath>conent\%(RelativeDir);contentFiles\any\any\%(RelativeDir)</PackagePath>
       </Resource>
     </ItemGroup>
     <ItemGroup>
       <SplashScreen Update="@(SplashScreen)">
         <Pack>True</Pack>
-        <PackagePath>$(ContentTargetFolders)</PackagePath>
+        <PackagePath>conent\%(RelativeDir);contentFiles\any\any\%(RelativeDir)</PackagePath>
       </SplashScreen>
     </ItemGroup>
     <ItemGroup>
       <DesignData Update="@(DesignData)">
         <Pack>True</Pack>
-        <PackagePath>$(ContentTargetFolders)</PackagePath>
+        <PackagePath>conent\%(RelativeDir);contentFiles\any\any\%(RelativeDir)</PackagePath>
       </DesignData>
     </ItemGroup>
     <ItemGroup>
       <DesignDataWithDesignTimeCreatableTypes Update="@(DesignDataWithDesignTimeCreatableTypes)">
         <Pack>True</Pack>
-        <PackagePath>$(ContentTargetFolders)</PackagePath>
+        <PackagePath>conent\%(RelativeDir);contentFiles\any\any\%(RelativeDir)</PackagePath>
       </DesignDataWithDesignTimeCreatableTypes>
     </ItemGroup>
     <ItemGroup>
       <CodeAnalysisDictionary Update="@(CodeAnalysisDictionary)">
         <Pack>True</Pack>
-        <PackagePath>$(ContentTargetFolders)</PackagePath>
+        <PackagePath>conent\%(RelativeDir);contentFiles\any\any\%(RelativeDir)</PackagePath>
       </CodeAnalysisDictionary>
     </ItemGroup>
     <ItemGroup>
       <AndroidAsset Update="@(AndroidAsset)">
         <Pack>True</Pack>
-        <PackagePath>$(ContentTargetFolders)</PackagePath>
+        <PackagePath>conent\%(RelativeDir);contentFiles\any\any\%(RelativeDir)</PackagePath>
       </AndroidAsset>
     </ItemGroup>
     <ItemGroup>
       <AndroidResource Update="@(AndroidResource)">
         <Pack>True</Pack>
-        <PackagePath>$(ContentTargetFolders)</PackagePath>
+        <PackagePath>conent\%(RelativeDir);contentFiles\any\any\%(RelativeDir)</PackagePath>
       </AndroidResource>
     </ItemGroup>
     <ItemGroup>
       <BundleResource Update="@(BundleResource)">
         <Pack>True</Pack>
-        <PackagePath>$(ContentTargetFolders)</PackagePath>
+        <PackagePath>conent\%(RelativeDir);contentFiles\any\any\%(RelativeDir)</PackagePath>
       </BundleResource>
     </ItemGroup>
     <ItemGroup>
-      <None Update="@(None)">
+      <None Update="@(None)" Condition="'%(Filename)%(Extension)' != '$(PackageLicenseFile)' AND '%(Filename)%(Extension)' != '$(PackageIcon)' ">
         <Pack>True</Pack>
-        <PackagePath>$(ContentTargetFolders)</PackagePath>
+        <PackagePath>conent\%(RelativeDir);contentFiles\any\any\%(RelativeDir)</PackagePath>
       </None>
     </ItemGroup>
   </Target>
