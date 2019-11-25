@@ -2,6 +2,15 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configurations>$(Configurations);SourcePackage</Configurations>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'SourcePackage'">
     <ContribMicrosoftBuildSourcePackage_AdaptPackagId Condition="'$(ContribMicrosoftBuildSourcePackage_AdaptPackagId)' == ''">True</ContribMicrosoftBuildSourcePackage_AdaptPackagId>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <NoBuild>true</NoBuild>
+    <developmentDependency>true</developmentDependency>
+    <NoPackageAnalysis>true</NoPackageAnalysis>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <IncludeContentInPack>true</IncludeContentInPack>
   </PropertyGroup>
 </Project>
