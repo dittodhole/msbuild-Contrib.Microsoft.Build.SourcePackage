@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <Import Project="build\Contrib.Microsoft.Build.SourcePackage.props" />
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -17,7 +17,7 @@
     <PackageIcon>noun_Source Code_996120.png</PackageIcon>
     <PackageTags />
     <PackageType>Dependency</PackageType>
-    <RepositoryUrl>https://github.com/dittodhole/dotnet-Source.JetBrains.Annotations.git</RepositoryUrl>
+    <RepositoryUrl>https://github.com/dittodhole/msbuild-Contrib.Microsoft.Build.SourcePackage.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <IncludeBuildOutput>false</IncludeBuildOutput>
     <BuildOutputTargetFolder>tasks</BuildOutputTargetFolder>
