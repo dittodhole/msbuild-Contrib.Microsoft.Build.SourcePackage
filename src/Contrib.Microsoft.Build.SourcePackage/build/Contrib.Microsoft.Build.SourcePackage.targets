@@ -17,6 +17,7 @@
       <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
       <PackageId Condition="'$(ContribMicrosoftBuildSourcePackage_AdaptPackagId)' == 'True'">$(PackageId).Source</PackageId>
       <developmentDependency>true</developmentDependency>
+      <NoPackageAnalysis>true</NoPackageAnalysis>
       <IncludeBuildOutput>false</IncludeBuildOutput>
       <IncludeContentInPack>true</IncludeContentInPack>
     </PropertyGroup>
