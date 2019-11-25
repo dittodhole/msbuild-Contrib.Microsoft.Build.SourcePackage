@@ -3,12 +3,7 @@
   <PropertyGroup Condition="'$(Configuration)' == 'SourcePackage'">
     <PackageId Condition="'$(ContribMicrosoftBuildSourcePackage_AdaptPackagId)' == 'True'">$(PackageId).Source</PackageId>
   </PropertyGroup>
-  <Target Name="ClearPackageReferences" BeforeTargets="ResolvePackageAssets" Condition="'$(Configuration)' == 'SourcePackage'">
-    <ItemGroup>
-      <PackageReference Remove="@(PackageReference)" />
-    </ItemGroup>
-  </Target>
-  <Target Name="UpdateAllItems" BeforeTargets="PrepareForBuild" Condition="'$(Configuration)' == 'SourcePackage'">
+  <Target Name="UpdateAllItems" BeforeTargets="_GetPackageFiles" Condition="'$(Configuration)' == 'SourcePackage'">
     <ItemGroup>
       <Content Update="@(Content)">
         <Pack>True</Pack>
