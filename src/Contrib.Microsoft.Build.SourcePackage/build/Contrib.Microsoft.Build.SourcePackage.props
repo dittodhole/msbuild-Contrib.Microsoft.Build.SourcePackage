@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
+    <Configurations Condition="'$(Configurations)' == ''">Debug;Release</Configurations>
     <Configurations>$(Configurations);SourcePackage</Configurations>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'SourcePackage'">
