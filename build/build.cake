@@ -1,7 +1,6 @@
 var artifactsDirectory = Directory("../artifacts");
 var sourceDirectory = Directory("../src");
 var solutionFile = sourceDirectory + File("Contrib.Microsoft.Build.SourcePackage.sln");
-var projectfile = sourceDirectory + Directory("Contrib.Microsoft.Build.SourcePackage") + File("Contrib.Microsoft.Build.SourcePackage.csproj");
 
 Task("Build")
   .IsDependentOn("Clean")
@@ -15,12 +14,11 @@ Task("Build")
                               .WithRestore()
                               .WithProperty("PackageOutputPath", MakeAbsolute(artifactsDirectory).FullPath));
 
-  MSBuild(projectfile,
+  MSBuild(solutionFile,
           settings => settings.SetConfiguration("SourcePackage")
                               .SetVerbosity(Verbosity.Minimal)
                               .WithRestore()
                               .WithProperty("PackageOutputPath", MakeAbsolute(artifactsDirectory).FullPath));
-
 });
 
 Task("Clean")

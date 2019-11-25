@@ -2,6 +2,18 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configurations>$(Configurations);SourcePackage</Configurations>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'SourcePackage'">
     <ContribMicrosoftBuildSourcePackage_AdaptPackagId Condition="'$(ContribMicrosoftBuildSourcePackage_AdaptPackagId)' == ''">True</ContribMicrosoftBuildSourcePackage_AdaptPackagId>
+    <NoWarn>$(NoWarn);CS2008;CS8021</NoWarn>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UpdateAssemblyInfo>false</UpdateAssemblyInfo>
+    <GenerateGitVersionInformation>false</GenerateGitVersionInformation>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <NoBuild>true</NoBuild>
+    <NoPackageAnalysis>true</NoPackageAnalysis>
+    <developmentDependency>true</developmentDependency>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <IncludeContentInPack>true</IncludeContentInPack>
   </PropertyGroup>
 </Project>

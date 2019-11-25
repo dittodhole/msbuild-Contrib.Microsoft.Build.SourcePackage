@@ -5,6 +5,12 @@
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
     <EnableDefaultItems>false</EnableDefaultItems>
+    <NoWarn>$(NoWarn);CS2008;CS8021</NoWarn>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UpdateAssemblyInfo>false</UpdateAssemblyInfo>
+    <GenerateGitVersionInformation>false</GenerateGitVersionInformation>
+    <NoBuild>true</NoBuild>
+    <NoPackageAnalysis>true</NoPackageAnalysis>
   </PropertyGroup>
   <PropertyGroup>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -17,14 +23,11 @@
     <PackageIcon>noun_Source Code_996120.png</PackageIcon>
     <PackageTags />
     <PackageType>Dependency</PackageType>
-    <RepositoryUrl>https://github.com/dittodhole/dotnet-Source.JetBrains.Annotations.git</RepositoryUrl>
+    <RepositoryUrl>https://github.com/dittodhole/msbuild-Contrib.Microsoft.Build.SourcePackage.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <IncludeBuildOutput>false</IncludeBuildOutput>
     <BuildOutputTargetFolder>tasks</BuildOutputTargetFolder>
   </PropertyGroup>
-  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
-    <PackageReference Include="NETStandard.Library" Version="2.0.3" />
-  </ItemGroup>
   <ItemGroup>
     <None Include="build\Contrib.Microsoft.Build.SourcePackage.props">
       <Pack>true</Pack>
