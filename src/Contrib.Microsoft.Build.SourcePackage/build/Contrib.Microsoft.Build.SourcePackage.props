@@ -11,7 +11,6 @@
     <UpdateAssemblyInfo>false</UpdateAssemblyInfo>
     <GenerateGitVersionInformation>false</GenerateGitVersionInformation>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <NoBuild>true</NoBuild>
     <NoPackageAnalysis>true</NoPackageAnalysis>
     <developmentDependency>true</developmentDependency>
     <IncludeBuildOutput>false</IncludeBuildOutput>
