@@ -7,85 +7,85 @@
     <ItemGroup>
       <Content Update="@(Content)">
         <Pack>True</Pack>
-        <PackagePath>conent\%(RelativeDir);contentFiles\any\any\%(RelativeDir)</PackagePath>
+        <PackagePath>content\%(RelativeDir);contentFiles\any\any\%(RelativeDir)</PackagePath>
       </Content>
     </ItemGroup>
     <ItemGroup>
       <Compile Update="@(Compile)">
         <Pack>True</Pack>
-        <PackagePath>conent\%(RelativeDir);contentFiles\any\any\%(RelativeDir)</PackagePath>
+        <PackagePath>content\%(RelativeDir);contentFiles\any\any\%(RelativeDir)</PackagePath>
       </Compile>
     </ItemGroup>
     <ItemGroup>
       <EmbeddedResource Update="@(EmbeddedResource)">
         <Pack>True</Pack>
-        <PackagePath>conent\%(RelativeDir);contentFiles\any\any\%(RelativeDir)</PackagePath>
+        <PackagePath>content\%(RelativeDir);contentFiles\any\any\%(RelativeDir)</PackagePath>
       </EmbeddedResource>
     </ItemGroup>
     <ItemGroup>
       <ApplicationDefinition Update="@(ApplicationDefinition)">
         <Pack>True</Pack>
-        <PackagePath>conent\%(RelativeDir);contentFiles\any\any\%(RelativeDir)</PackagePath>
+        <PackagePath>content\%(RelativeDir);contentFiles\any\any\%(RelativeDir)</PackagePath>
       </ApplicationDefinition>
     </ItemGroup>
     <ItemGroup>
       <Page Update="@(Page)">
         <Pack>True</Pack>
-        <PackagePath>conent\%(RelativeDir);contentFiles\any\any\%(RelativeDir)</PackagePath>
+        <PackagePath>content\%(RelativeDir);contentFiles\any\any\%(RelativeDir)</PackagePath>
       </Page>
     </ItemGroup>
     <ItemGroup>
       <Resource Update="@(Resource)">
         <Pack>True</Pack>
-        <PackagePath>conent\%(RelativeDir);contentFiles\any\any\%(RelativeDir)</PackagePath>
+        <PackagePath>content\%(RelativeDir);contentFiles\any\any\%(RelativeDir)</PackagePath>
       </Resource>
     </ItemGroup>
     <ItemGroup>
       <SplashScreen Update="@(SplashScreen)">
         <Pack>True</Pack>
-        <PackagePath>conent\%(RelativeDir);contentFiles\any\any\%(RelativeDir)</PackagePath>
+        <PackagePath>content\%(RelativeDir);contentFiles\any\any\%(RelativeDir)</PackagePath>
       </SplashScreen>
     </ItemGroup>
     <ItemGroup>
       <DesignData Update="@(DesignData)">
         <Pack>True</Pack>
-        <PackagePath>conent\%(RelativeDir);contentFiles\any\any\%(RelativeDir)</PackagePath>
+        <PackagePath>content\%(RelativeDir);contentFiles\any\any\%(RelativeDir)</PackagePath>
       </DesignData>
     </ItemGroup>
     <ItemGroup>
       <DesignDataWithDesignTimeCreatableTypes Update="@(DesignDataWithDesignTimeCreatableTypes)">
         <Pack>True</Pack>
-        <PackagePath>conent\%(RelativeDir);contentFiles\any\any\%(RelativeDir)</PackagePath>
+        <PackagePath>content\%(RelativeDir);contentFiles\any\any\%(RelativeDir)</PackagePath>
       </DesignDataWithDesignTimeCreatableTypes>
     </ItemGroup>
     <ItemGroup>
       <CodeAnalysisDictionary Update="@(CodeAnalysisDictionary)">
         <Pack>True</Pack>
-        <PackagePath>conent\%(RelativeDir);contentFiles\any\any\%(RelativeDir)</PackagePath>
+        <PackagePath>content\%(RelativeDir);contentFiles\any\any\%(RelativeDir)</PackagePath>
       </CodeAnalysisDictionary>
     </ItemGroup>
     <ItemGroup>
       <AndroidAsset Update="@(AndroidAsset)">
         <Pack>True</Pack>
-        <PackagePath>conent\%(RelativeDir);contentFiles\any\any\%(RelativeDir)</PackagePath>
+        <PackagePath>content\%(RelativeDir);contentFiles\any\any\%(RelativeDir)</PackagePath>
       </AndroidAsset>
     </ItemGroup>
     <ItemGroup>
       <AndroidResource Update="@(AndroidResource)">
         <Pack>True</Pack>
-        <PackagePath>conent\%(RelativeDir);contentFiles\any\any\%(RelativeDir)</PackagePath>
+        <PackagePath>content\%(RelativeDir);contentFiles\any\any\%(RelativeDir)</PackagePath>
       </AndroidResource>
     </ItemGroup>
     <ItemGroup>
       <BundleResource Update="@(BundleResource)">
         <Pack>True</Pack>
-        <PackagePath>conent\%(RelativeDir);contentFiles\any\any\%(RelativeDir)</PackagePath>
+        <PackagePath>content\%(RelativeDir);contentFiles\any\any\%(RelativeDir)</PackagePath>
       </BundleResource>
     </ItemGroup>
     <ItemGroup>
       <None Update="@(None)" Condition="'%(Filename)%(Extension)' != '$(PackageLicenseFile)' AND '%(Filename)%(Extension)' != '$(PackageIcon)' ">
         <Pack>True</Pack>
-        <PackagePath>conent\%(RelativeDir);contentFiles\any\any\%(RelativeDir)</PackagePath>
+        <PackagePath>content\%(RelativeDir);contentFiles\any\any\%(RelativeDir)</PackagePath>
       </None>
     </ItemGroup>
   </Target>
